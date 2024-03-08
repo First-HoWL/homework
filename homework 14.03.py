@@ -21,7 +21,7 @@ def chisla(a, b):
         for i in range(a, b, 2):
             print(i)
 
-chisla(11, 20)
+chisla(int(input('перше число'), int(input('Друге число'))
 
 
 
