@@ -58,7 +58,7 @@ def chosse(a, b):
 
 people = people_chosse()
 bot = bot_chosse()
-g = full_name(chosse(people, bot))
+whos = full_name(chosse(people, bot))
 print(f'Ваш вибір: {full_name(people)}')
 print(f'Вибір бота: {full_name(bot)}')
-print(f'{g} - Win!') # Якщо буде нічия буде написано None - Win!
+print(f'{whos} - Win!') # Якщо буде нічия буде написано None - Win!
