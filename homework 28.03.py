@@ -45,7 +45,7 @@ def chosse(a, b):
     elif a == 'п' and b == 'н':
         return 'b'
     elif a == 'н' and b == 'к':
-        return 'p'
+        return 'b'
     elif a == 'к' and b == 'п':
         return 'b'
     elif a == 'п' and b == 'к':
