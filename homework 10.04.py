@@ -44,6 +44,7 @@ async def cmd_roll(message: types.Message, command: CommandObject):
         await message.answer(f"Випадкове число від 1 до 100: {random.randint(1, 100)}")
 
 
+
 async def main():
     await dp.start_polling(bot)
 
