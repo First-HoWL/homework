@@ -238,7 +238,7 @@ def get_buttons_counter_keybord():
     builder = InlineKeyboardBuilder()
     builder.row(types.InlineKeyboardButton(text='+ 1', callback_data='+1'),
                 types.InlineKeyboardButton(text='- 1', callback_data='-1'),
-                types.InlineKeyboardButton(text='Clear', callback_data='clear'))
+                types.InlineKeyboardButton(text='Stop', callback_data='stop'))
     return builder
 
 
@@ -269,12 +269,10 @@ async def button_1_counter_callback(callback: types.CallbackQuery, state: FSMCon
     await callback.answer()
 
 
-@dp.callback_query(F.data == 'clear')
+@dp.callback_query(F.data == 'stop')
 async def button_1_counter_callback(callback: types.CallbackQuery, state: FSMContext):
-    znachenya = 0
-    await state.update_data(Znacheniya=znachenya)
-    await callback.message.edit_text(f'Поточне значення: {znachenya}!',
-                                     reply_markup=get_buttons_counter_keybord().as_markup())
+    znachenya = (await state.get_data())['Znacheniya']
+    await callback.message.edit_text(f"Итого: {znachenya}")
     await callback.answer()
 
 # ---Help---
