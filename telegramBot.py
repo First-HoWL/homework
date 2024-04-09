@@ -187,6 +187,7 @@ async def cmd_buttons(message: types.Message, state: FSMContext):
     #     ],
     #     resize_keyboard=True
     # )
+
     await message.answer('Тут будуть кнопки!', reply_markup=builder.as_markup(resize_keyboard=True))
     await state.set_state(ButtonStates.choose_button)
 
