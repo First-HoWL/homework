@@ -211,7 +211,7 @@ def get_buttons_keybord():
 
 
 @dp.message(Command("inline_buttons"))
-async def cmd_inline_button(message: types.Message, state: FSMContext):
+async def cmd_inline_button(message: types.Message):
     await message.answer('Оберіть дію', reply_markup=get_buttons_keybord().as_markup())
 
 
@@ -270,7 +270,6 @@ async def button_1_counter_callback(callback: types.CallbackQuery, state: FSMCon
 
 @dp.callback_query(F.data == 'clear')
 async def button_1_counter_callback(callback: types.CallbackQuery, state: FSMContext):
-    znachenya = (await state.get_data())['Znacheniya']
     znachenya = 0
     await state.update_data(Znacheniya=znachenya)
     await callback.message.edit_text(f'Поточне значення: {znachenya}!',
