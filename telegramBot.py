@@ -1,3 +1,4 @@
+# https://t.me/Cucumber_s_Bot - мой бот
 import random
 import asyncio
 import logging
@@ -35,7 +36,7 @@ logging.basicConfig(level=logging.INFO)
 bot = Bot(token="7161846829:AAEcozQpBztwMJ0ntcypIAD3oNHkiIH6s4w")
 # Диспетчер
 dp = Dispatcher()
-# https://t.me/Cucumber_s_Bot - мой бот
+
 
 
 
